@@ -1,0 +1,3 @@
+﻿  test.cpp
+D:\data\CRA\dev\GildedRose\GildedRose\GildedRose.cpp(57,23): warning C4018: '<': signed/unsigned mismatch
+  GildedRose-Test1.vcxproj -> D:\data\CRA\dev\GildedRose\Debug\GildedRose-Test1.exe

@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <meta charset="utf-8"/>
+	    <title>test.cpp</title>
+	    <link href="../../third-party/google-code-prettify/prettify-CppCoverage.css" type="text/css" rel="stylesheet" />
+	    <script type="text/javascript" src="../../third-party/google-code-prettify/prettify.js"></script>
+	</head>
+    <body onload="prettyPrint()">
+        <h4></h4>
+        <pre class="prettyprint lang-cpp linenums">
+#include "pch.h"
+#include "../GildedRose/GildedRose.cpp"
+
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, should_be_nothing_when_no_item)
+{</span>
+	// given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items;
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(0, items.size());
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, noname_sellin_0_quality_0)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::NONAME, 0, 0) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-1, items[0].sellIn);
+    EXPECT_EQ(0, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, noname_sellin_0_quality_1)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::NONAME, 0, 1) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-1, items[0].sellIn);
+    EXPECT_EQ(0, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, noname_sellin_0_quality_3)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::NONAME, 0, 3) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-1, items[0].sellIn);
+    EXPECT_EQ(1, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, sulfuras_sellin_0_quality_80)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::SULFURAS, 0, 80) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(0, items[0].sellIn);
+    EXPECT_EQ(80, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, agedBrie_sellin_0_quality_0)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::AGED_BRIE, 0, 0) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-1, items[0].sellIn);
+    EXPECT_EQ(2, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, backstage_pass_sellin_0_quality_0)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::BACKSTAGE_PASS, 0, 0) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-1, items[0].sellIn);
+    EXPECT_EQ(0, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, backstage_pass_sellin_0_quality_49)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::BACKSTAGE_PASS, 0, 49) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-1, items[0].sellIn);
+    EXPECT_EQ(0, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, backstage_pass_sellin_12_quality_0)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::BACKSTAGE_PASS, 12, 0) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(11, items[0].sellIn);
+    EXPECT_EQ(1, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, sulfuras_sellin_m2_quality_80)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::SULFURAS, -2, 80) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-2, items[0].sellIn);
+    EXPECT_EQ(80, items[0].quality);
+}</span>
+
+<span style = "background-color:#dfd">TEST(GildedRoseTest, agedBrie_sellin_0_quality_50)
+{</span>
+    // given (arrange)
+<span style = "background-color:#dfd">    vector&lt;Item&gt; items = { Item(ITEM::AGED_BRIE, 0, 50) };
+    GildedRose app(items);</span>
+
+    // When (act)
+<span style = "background-color:#dfd">    app.updateQuality();</span>
+
+    // then (assert)
+<span style = "background-color:#dfd">    EXPECT_EQ(-1, items[0].sellIn);
+    EXPECT_EQ(50, items[0].quality);
+}</span></pre>
+        <hr />
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th align="center">
+                        <small>Generated by</small>
+                        <a href="https://github.com/OpenCppCoverage/OpenCppCoverage/releases">
+                            <strong>OpenCppCoverage (Version: 0.9.9.0)</strong>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

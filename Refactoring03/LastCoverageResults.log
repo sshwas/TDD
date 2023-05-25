@@ -1,0 +1,17 @@
+[2023-05-25 15:02:19] [info] Start Program:
+Path:".\\Debug\\GildedRose-Test1.exe"
+Arguments:
+Working directory: not set.
+Modules: Selected: * Excluded: 
+Sources: Selected: D:\data\*.c Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: html coverage 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+[2023-05-25 15:02:19] [error] Error: Cannot find path: .\Debug\GildedRose-Test1.exe

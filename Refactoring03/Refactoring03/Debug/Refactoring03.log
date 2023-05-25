@@ -1,0 +1,3 @@
+﻿  EvenOdd.cpp
+D:\data\CRA\dev\Refactoring03\Refactoring03\EvenOdd.cpp(11,21): warning C4018: '<': signed/unsigned mismatch
+  Refactoring03.vcxproj -> D:\data\CRA\dev\Refactoring03\Debug\Refactoring03.exe
